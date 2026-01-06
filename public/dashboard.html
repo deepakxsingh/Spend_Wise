@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendWise</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-wallet"></i></div>
+            <span>SpendWise</span>
+        </div>
+        <div class="user-actions" style="color: red;">
+            
+            <a href="index.html" class="logout" onclick="alert('Logged out!')">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="color: red;"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Welcome back!</h1>
+            <p class="subtitle">Track your expenses and stay on top of your budget.</p>
+        </header>
+
+        <div class="main-grid">
+            <!-- Left Column: Form & Stats -->
+            <div class="left-column">
+                
+                <!-- Add Expense Form -->
+                <div class="card form-card">
+                    <div class="card-header">
+                        <div class="icon-circle small-green"><i class="fa-solid fa-plus"></i></div>
+                        <h2>Add Expense</h2>
+                    </div>
+                    
+                    <form id="expenseForm">
+                        <div class="form-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category</label>
+                            <div class="custom-select-wrapper">
+                                <select id="category" required>
+                                    <option value="Food">🍔 Food</option>
+                                    <option value="Travel">🚌 Travel</option>
+                                    <option value="Shopping">🛍️ Shopping</option>
+                                    <option value="Other">📦 Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Note (optional)</label>
+                            <input type="text" id="note" placeholder="What was this for?">
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fa-solid fa-plus"></i> Add Expense
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Total Spent Card -->
+                <div class="card total-card">
+                    <div class="total-info">
+                        <span>Total Spent</span>
+                        <h1 id="totalAmount">₹0</h1>
+                    </div>
+                    <div class="wallet-icon-bg">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                </div>
+
+                <!-- Spending by Category -->
+                <div class="card category-card" id="categoryBreakdown" style="display: none;">
+                    <h3>Spending by Category</h3>
+                    <div id="categoryList">
+                        <!-- Dynamic Content inserted by JS -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Recent Expenses -->
+            <div class="right-column">
+                <div class="card recent-card">
+                    
+                    <div class="card-header-simple">
+                        <h2>Recent Expenses</h2>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>No expenses yet</h3>
+                        <p>Add your first expense to start tracking!</p>
+                    </div>
+
+                    <!-- Expense List -->
+                    <div id="expenseList" class="expense-list">
+                        <!-- Items will be injected here -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

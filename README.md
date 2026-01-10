@@ -52,3 +52,5 @@ ________________________________________________________________________________
 
 
 <img width="1330" height="740" alt="Screenshot 2026-01-05 192338" src="https://github.com/user-attachments/assets/80a975b4-0d3f-4291-9320-ae4c07b571e9" />
+![ Home Screenshot](./assests/Screenshot1.png)
+![ Dashboard Screenshot](./assests/Screenshot2.png)

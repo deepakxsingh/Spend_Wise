@@ -22,7 +22,7 @@ ________________________________________________________________________________
 
 ##  User Flow
 
-Landing Page
+ Landing Page
    ↓
 Google Sign-In (Firebase Auth)
    ↓
